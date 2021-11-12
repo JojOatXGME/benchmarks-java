@@ -1,0 +1,9 @@
+# Keep Gradle wrapper distribution as is
+/gradlew        binary
+/gradlew.bat    binary
+
+# Source file configuration
+*.java          diff=java
+
+# Do not show diff for locked dependencies
+/gradle.lockfile -diff

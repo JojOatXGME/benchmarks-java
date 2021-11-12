@@ -1,0 +1,3 @@
+rootProject.name = 'benchmarks-java'
+
+enableFeaturePreview("VERSION_CATALOGS")
