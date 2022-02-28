@@ -25,3 +25,7 @@ dependencies {
     compileOnly libs.jetbrains.annotations
     testCompileOnly libs.jetbrains.annotations
 }
+
+jmh {
+    //includes = ['ProxyCreation']
+}
