@@ -1,5 +1,3 @@
-import me.champeau.jmh.JmhBytecodeGeneratorTask
-
 plugins {
     id("java")
     id("project-report")
@@ -10,9 +8,13 @@ group = "dev.johanness"
 version = "1.0-SNAPSHOT"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_20
+    sourceCompatibility = JavaVersion.VERSION_17
 }
 
+/* JDK20
+java {
+    sourceCompatibility = JavaVersion.VERSION_20
+}
 tasks.withType<JavaCompile>().configureEach {
     options.compilerArgs.add("--enable-preview")
 }
@@ -25,6 +27,7 @@ tasks.withType<JavaExec>().configureEach {
 tasks.withType<JmhBytecodeGeneratorTask>().configureEach {
     jvmArgs.add("--enable-preview")
 }
+//JDK20 */
 
 repositories {
     mavenCentral()
@@ -38,11 +41,14 @@ dependencies {
 jmh {
     //includes = listOf("EnhancedForHelper")
 
-    //timeOnIteration = "2s"
+    //timeOnIteration = "5s"
     //iterations = 5
-    //warmup = "2s"
+    //warmup = "5s"
     //warmupIterations = 5
     //fork = 2
+    //profilers = listOf("gc")
 
+    /* JDK20
     jvmArgsAppend = listOf("--enable-preview")
+    //JDK20 */
 }

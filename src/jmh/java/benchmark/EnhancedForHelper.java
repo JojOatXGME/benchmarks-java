@@ -3,11 +3,9 @@ package benchmark;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
-import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.Objects;
 import java.util.stream.IntStream;
 
 @State(Scope.Benchmark)
@@ -35,6 +33,7 @@ public class EnhancedForHelper {
     return result;
   }
 
+  /* JDK20
   @Benchmark
   public int enhanced_for_with_pattern_matching() {
     int result = 0;
@@ -43,6 +42,7 @@ public class EnhancedForHelper {
     }
     return result;
   }
+  //JDK20 */
 
   private int merge(int index, String value) {
     return 7 * index ^ value.hashCode();
